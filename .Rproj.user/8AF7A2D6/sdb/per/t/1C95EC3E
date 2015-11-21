@@ -1,0 +1,18 @@
+{
+    "contents" : "getwd()\nlibrary()\n\na=c(3,7,8)\nmean(a)\n#not sure what the difference between these two is\nmean(x=a)\nx=mean(a)\nb=c(4,5,8,11)\nsum(b)\ns=sum(b)\nrnorm(10)\nran=rnorm(10)\nplot(ran)\ndim(ran)\nls(ran)\nran\nsummary(ran)\n?data.frame()\ndata.frame(ran)\nrandf = data.frame(ran)\ndim(ran)\nnewran=rnorm(n=50,mean=25,sd=5)\nsummary(newran)\nlist(newran)\nrm(randf)\ndim(newran)\n?dim\nplot(newran)\nplot(newran, type = \"b\")\n\n#to remove err'thing\n?rm\nrm(list = ls())\n\n?sqrt\n\nsqrt(x)\nsqrt(s)\n\n\nsource(\"randomCent.R\")\n  \nmat=matrix(data=c(1:50), nrow=10)\nmat\n?seq\np = seq(31,60)\np\nq = matrix(data=p, nrow=6, ncol=5)\nq\nq+mat\nmat[1,1]\ndim(mat)\nmat[10,5]\nmat[3,4]\nmat[2,]\nmat[,1]\nmean(q)\nmean(mat)\n\n\n#finally data frames are explained: data frames are matrices with names above the columns\nrm(a)\nrm(b)\nt=data.frame(a=c(1,2,3),b=c(3,4,5),c=c(5,6,7))\nt\nt.a\nt$a\nt$a + t$b\n\nrm(t)\nsource(\"randVectors.R\")\nt=data.frame(x1,x2,x3)\nt\nplot(t)\nplot(t$x1,t$x2)\nsd(t)\nsd(t$x1)\nsd(t)\ndim(t)\n\n#lists\n#The main\n# advantage of lists is that the \\columns\" (they're\n# not really ordered in columns any more, but are\n# more a collection of vectors) don't have to be of\n# the same length, unlike matrices and data frames.\n\nL= list(one=1, two=c(1,2), five=seq(0,1,length=5))\nL\nL$one\nL$two\nattach(L)\n$one\none\ntwo\nfive\n?attach\ndetach(L)\none\n\nnames(L)\nL\n\n#Graphics\n\nplot(rnorm(100), type=\"l\", col=\"gold\")\nhist(rnorm(100))\nsource(\"randVectors.R\")\nplot(t$x1, type = \"l\", ylim = range(t), lwd=3, col=rgb(1,0,0,0.3))\nlines(t$x2, type = \"s\", lwd=2, col=rgb(0.3,0.4,0.3,0.9))\npoints(t$x3, pch=20, cex=4, col=rgb(0,0,1,0.3))\n\nsource(\"randVectors.R\")\nsource('~/R/VeryShortIntro/randVectors.R')\n?closure\n\n?rgb\n?par\n\n#reading and writing data files\n\nd = data.frame(a=c(3,4,5), b=c(12,43,54))\nd\nwrite.table(d, file=\"tst0.txt\", row.names = FALSE)\nd2= read.table(file = \"tst0.txt\", header=TRUE)\nd2\n?seq\ntst1 = data.frame(a=seq(1,32, length.out = 6),g=seq(2,64, length.out = 6),x=seq(3,96, length.out = 6))\ntst1\nwrite.table(tst1, file=\"tst1.txt\", row.names = FALSE)\ntstr = read.table(file = \"tst1.txt\", header=TRUE)\ntstr\n#bon\n\n#Not available data\n#compute the mean of the square root of a vector of 100 random numbers\nrand100= rnorm(100)\nmean(sqrt(rand100))\n#what happens is \"Warning message: In sqrt(rand100): NaNs produced\n#to get around missing data you can add the argument na.rm=TRUE\n\n\n#Classes\n#not much useful here, but the next section...\n\n#Programming tools\n\nw=3\nif(w<5)\n{\n  d=2\n}else{\n  d=10\n}\nd\n#To get a subset of points in a vector for which\n# a certain condition holds, you can use a shorter\n# method:\na=c(1,2,3,4)\nb=c(5,6,7,8)\nf= a[b==5 | b==8]\nf\n# In line 3 you say that f is composed of those\n# elements of vector a for which b equals 5 or b\n# equals 8.\n\n#For-loop\n\nh= seq(from=1, to=10)\ns=c()\nfor(i in 1:10)\n{\n  s[i] = h[i]*20\n}\ns\n\nx=c(1:100)\ny=c()\nfor (n in 1:100)\n{y[n] = x[n]\nif (y[n]<5\n    | y[n]>90)\n  {y[n]=y[n]*10\n  }else{\n  y[n]=y[n]*0.1}\n}\ny\n",
+    "created" : 1448060373181.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1709591730",
+    "id" : "1C95EC3E",
+    "lastKnownWriteTime" : 1448071609,
+    "path" : "~/R/VeryShortIntro/VeryShortIntro.R",
+    "project_path" : "VeryShortIntro.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
